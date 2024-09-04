@@ -1,24 +1,12 @@
-import os
 import pandas as pd
+import glob as gl
 
-# Set the path to the folder containing CSV files
-csv_folder = 'path_to_your_unzipped_folder'
-output_file = 'combined_text.txt'
+csv_files = gl.glob('*.csv')
 
-# Collect text from all CSV files
-all_texts = []
+combined_df = pd.DataFrame()
 
-for file in os.listdir(csv_folder):
-    if file.endswith('.csv'):
-        file_path = os.path.join(csv_folder, file)
-        df = pd.read_csv(file_path)
+for csv_file in csv_files:
+    df = pd.read_csv(csv_file)
+    combined_df = pd.concat([combined_df, df])
 
-        # Assuming the column with large texts is named 'text'
-        all_texts.extend(df['text'].tolist())
-
-# Write to a single text file
-with open(output_file, 'w', encoding='utf-8') as f:
-    for text in all_texts:
-        f.write(text + '\n')
-
-#----fetch .csv---
+print(combined_df)
