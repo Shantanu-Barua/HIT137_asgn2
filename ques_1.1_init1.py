@@ -9,4 +9,8 @@ for csv_file in csv_files:
     df = pd.read_csv(csv_file)
     combined_df = pd.concat([combined_df, df])
 
-print(combined_df)
+# print(combined_df)
+print(list(combined_df))
+
+
+combined_df.to_csv('combined.txt', sep=',', index=False)
