@@ -20,4 +20,4 @@ def count_words(input_file, output_csv):
         writer.writerow(['Word', 'Count'])
         writer.writerows(top_30_words)
 
-count_words('combined.txt', 'top_30_words.csv')
+count_words('combined.txt', 'top_30_comm_words.csv')
