@@ -15,5 +15,7 @@ while counter < 5:
     else:
         counter += 2 
 
-print(total)
+# print(total)
 # print(counter)
+
+# Github link https://github.com/Shantanu-Barua/HIT137_asgn2.git 
