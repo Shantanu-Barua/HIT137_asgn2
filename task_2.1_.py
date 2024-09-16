@@ -13,6 +13,8 @@ generated_number = (current_time % 100) + 50
 if generated_number % 2 == 0:
     generated_number += 10
 
+print("Generated number n = ", generated_number)
+
 # Convert the image to RGB if it's not in that mode
 image = image.convert("RGB")
 pixels = image.load()
